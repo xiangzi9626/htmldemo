@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script>
+        $(function(){
+            var w = $("#demo1").width();//容器宽度
+            $("#demo1 img").each(function(){//如果有很多图片，我们可以使用each()遍历
+                var img_w = $(this).width();//图片宽度
+                var img_h = $(this).height();//图片高度
+                if(img_w>w){//如果图片宽度超出容器宽度--要撑破了
+                    var height = (w*img_h)/img_w; //高度等比缩放
+                    $(this).css({"width":w,"height":height});//设置缩放后的宽度和高度
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="demo1" style="width:500px;height: 500px;margin: auto;">
+    <img src="img/201906281003011203.jpg"/>
+</div>
+</body>
+</html>

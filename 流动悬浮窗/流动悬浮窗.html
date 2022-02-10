@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width:100px;
+            height:150px;
+            background:red;
+            position: absolute;
+            right:0;
+            bottom:0;}
+        body {
+            height:2000px;}
+        #text1 {
+            position:fixed;
+            right:0;
+            top:0
+             }
+    </style>
+    <script>
+        window.onscroll=function () {
+            var oDiv=document.getElementById("div1");
+            var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+            //oDiv.style.top=document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop+"px";
+            startMove(parseInt((document.documentElement.clientHeight-oDiv.offsetHeight)/2+scrollTop));
+        }
+        var timer=null;
+        function startMove(iTarget) {
+            var oDiv=document.getElementById("div1");
+            clearInterval(timer);
+            timer=setInterval(function () {
+                var apeed=(iTarget-oDiv.offsetTop)/6;
+                apeed=apeed>0?Math.ceil(apeed):Math.floor(apeed);
+                if (oDiv.offsetTop==iTarget){clearInterval(timer)}else {
+                    document.title=iTarget;
+                    document.getElementById("text1").value=oDiv.offsetTop;
+                    oDiv.style.top=oDiv.offsetTop+apeed+"px";
+                }
+            },30)
+        }
+    </script>
+</head>
+<body>
+<input id="text1"type="text">
+<div id="div1"></div>
+
+</body>
+</html>
