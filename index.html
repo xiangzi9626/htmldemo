@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="axios.js"></script>
+    <script>
+        window.onload=function () {
+            var btn=document.getElementById("btn");
+            btn.onclick=function () {
+                axios.post('text.php')
+                    .then(function (response) {
+                       alert(response.data);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn">点击</button>
+</body>
+</html>
