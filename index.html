@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/swiper-5.4.1/package/css/swiper.min.css"/>
+    <title>swiper轮播图demo</title>
+    <script src="/static/swiper-5.4.1/package/js/swiper.min.js"></script>
+    <style>
+        .swiper-container {
+            width: 100%;
+        }
+
+        .swiper-container img {
+             width: 100%;
+            max-height: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="/static/banner/1.jpg"/>
+        </div>
+        <div class="swiper-slide">
+            <img src="/static/banner/2.jpg"/>
+        </div>
+        <div class="swiper-slide">
+            <img src="/static/banner/3.jpg"/>
+        </div>
+        <div class="swiper-slide">
+            <img src="/static/banner/4.jpg"/>
+        </div>
+        <div class="swiper-slide">
+            <img src="/static/banner/5.jpg"/>
+        </div>
+    </div>
+</div>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        // direction: 'vertical', // 垂直切换选项
+        loop: true, // 循环模式选项
+        speed: 500,
+        autoHeight: true,
+
+        // 如果需要分页器
+        /* pagination: {
+             el: '.swiper-pagination',
+         },*/
+        // 自动播放时间
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: true,
+        },
+        effect: 'fade',//淡入
+        // effect:"cube",//3d方块
+        // effect:"coverflow",// 3d流
+        // eccect:"flip",// 3d翻转
+        //effect:"slide",//位移
+        // 如果需要前进后退按钮
+        /*navigation: {
+           nextEl: '.swiper-button-next',
+               prevEl: '.swiper-button-prev',
+       },*/
+
+        // 如果需要滚动条
+        /* scrollbar: {
+             el: '.swiper-scrollbar',
+         },*/
+    })
+</script>
+</body>
+</html>
